@@ -1,0 +1,25 @@
+node_modules
+.next
+.turbo
+dist
+build
+.DS_Store
+*.log
+.env*.local
+.pnpm-store
+
+# TypeScript
+*.tsbuildinfo
+
+# IDE
+.vscode/*
+!.vscode/extensions.json
+.idea
+
+# Test
+coverage
+playwright-report
+test-results
+
+# OS
+Thumbs.db

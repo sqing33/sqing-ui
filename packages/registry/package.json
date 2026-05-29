@@ -1,0 +1,33 @@
+{
+  "name": "@sqing/registry",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./components/*": "./src/components/*/index.tsx",
+    "./components/*/demo": "./src/components/*/demo.tsx",
+    "./components/*/meta": "./src/components/*/meta.ts",
+    "./schema": "./src/schema.ts",
+    "./registry.json": "./src/registry.json"
+  },
+  "scripts": {
+    "build:registry": "tsx scripts/build-registry.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "framer-motion": "^11.11.17",
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^2.5.4"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "@types/react": "^18.3.12",
+    "react": "^18.3.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3",
+    "zod": "^3.23.8"
+  }
+}

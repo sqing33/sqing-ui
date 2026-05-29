@@ -1,0 +1,22 @@
+{
+  "name": "count-up",
+  "title": "数字滚动动画，从起始值滚动到目标值，常用于数据展示",
+  "description": "数字滚动动画，从起始值滚动到目标值，常用于数据展示。",
+  "category": "data",
+  "dependencies": [
+    "framer-motion"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "name": "index.tsx",
+      "path": "count-up/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { motion, useInView, useMotionValue, useSpring, useTransform } from 'framer-motion'\nimport { cn } from '../../utils/cn'\n\nexport interface CountUpProps {\n  /** 目标值 */\n  to: number\n  /** 起始值 */\n  from?: number\n  /** 动画时长（秒） */\n  duration?: number\n  /** 小数位数 */\n  decimals?: number\n  /** 前缀 */\n  prefix?: string\n  /** 后缀 */\n  suffix?: string\n  /** 千分位分隔符 */\n  separator?: string\n  /** 自定义 className */\n  className?: string\n}\n\n/**\n * CountUp - 数字滚动动画\n *\n * 进入视口后从 from 滚动到 to。\n * 使用 framer-motion 的 spring 实现平滑过渡。\n */\nexport function CountUp({\n  to,\n  from = 0,\n  duration = 2,\n  decimals = 0,\n  prefix = '',\n  suffix = '',\n  separator = ',',\n  className,\n}: CountUpProps) {\n  const ref = React.useRef<HTMLSpanElement>(null)\n  const inView = useInView(ref, { once: true, margin: '0px' })\n\n  const count = useMotionValue(from)\n  const damping = 20 + 40 * (1 / duration)\n  const stiffness = 100 / duration\n  const springValue = useSpring(count, { damping, stiffness })\n  const display = useTransform(springValue, (latest) => {\n    const value = latest.toFixed(decimals)\n    const [intPart, decPart] = value.split('.')\n    const formatted = intPart.replace(/\\B(?=(\\d{3})+(?!\\d))/g, separator)\n    return decPart !== undefined ? `${prefix}${formatted}.${decPart}${suffix}` : `${prefix}${formatted}${suffix}`\n  })\n\n  React.useEffect(() => {\n    if (inView) {\n      count.set(to)\n    }\n  }, [inView, to, count])\n\n  return (\n    <span ref={ref} className={cn('tabular-nums', className)}>\n      <motion.span>{display}</motion.span>\n    </span>\n  )\n}\n"
+    },
+    {
+      "name": "demo.tsx",
+      "path": "count-up/demo.tsx",
+      "content": "'use client'\n\nimport { CountUp } from './index'\n\nexport function CountUpDemo() {\n  return (\n    <div className=\"grid min-h-[400px] w-full grid-cols-2 gap-6 bg-slate-50 p-8 md:grid-cols-4 dark:bg-slate-900\">\n      <div className=\"flex flex-col items-center justify-center rounded-lg border bg-white p-6 shadow-sm dark:bg-slate-800 dark:border-slate-700\">\n        <div className=\"mb-2 text-4xl font-bold text-blue-600\">\n          <CountUp to={1234} />\n        </div>\n        <div className=\"text-xs text-slate-500\">Default</div>\n      </div>\n\n      <div className=\"flex flex-col items-center justify-center rounded-lg border bg-white p-6 shadow-sm dark:bg-slate-800 dark:border-slate-700\">\n        <div className=\"mb-2 text-4xl font-bold text-purple-600\">\n          $<CountUp to={98765} />\n        </div>\n        <div className=\"text-xs text-slate-500\">Currency</div>\n      </div>\n\n      <div className=\"flex flex-col items-center justify-center rounded-lg border bg-white p-6 shadow-sm dark:bg-slate-800 dark:border-slate-700\">\n        <div className=\"mb-2 text-4xl font-bold text-green-600\">\n          <CountUp to={99.5} decimals={1} suffix=\"%\" />\n        </div>\n        <div className=\"text-xs text-slate-500\">Percentage</div>\n      </div>\n\n      <div className=\"flex flex-col items-center justify-center rounded-lg border bg-white p-6 shadow-sm dark:bg-slate-800 dark:border-slate-700\">\n        <div className=\"mb-2 text-4xl font-bold text-orange-600\">\n          <CountUp to={1.5} from={0} decimals={2} suffix=\"M\" />\n        </div>\n        <div className=\"text-xs text-slate-500\">Decimals</div>\n      </div>\n    </div>\n  )\n}\n"
+    }
+  ]
+}

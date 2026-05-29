@@ -1,0 +1,20 @@
+{
+  "name": "aurora-text",
+  "title": "极光文字组件，多色线性渐变 + 流光动画，让文字呈现极光般的流光渐变效果",
+  "description": "极光文字组件，多色线性渐变 + 流光动画，让文字呈现极光般的流光渐变效果。支持自定义颜色、动画速度和 hover 触发。",
+  "category": "visual",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "name": "index.tsx",
+      "path": "aurora-text/index.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { cn } from '../../utils/cn'\n\nexport interface AuroraTextProps {\n  /** 要显示的文字 */\n  text: string\n  /** 极光渐变色数组（至少 2 个颜色） */\n  colors?: string[]\n  /** 动画时长（秒），数值越大动画越慢 */\n  speed?: number\n  /** 是否仅在 hover 时触发极光动画 */\n  enableOnHover?: boolean\n  /** 自定义 className */\n  className?: string\n}\n\n/**\n * AuroraText - 极光文字\n *\n * 通过 background-clip:text + 多色线性渐变 + CSS 动画让文字呈现\n * 流光极光效果。颜色会在文字表面循环流动，形成极光般的光带。\n * 灵感来源：Magic UI / Aceternity UI Aurora Text。\n */\nexport function AuroraText({\n  text,\n  colors = ['#ff006e', '#8338ec', '#3a86ff', '#06ffa5'],\n  speed = 8,\n  enableOnHover = false,\n  className,\n}: AuroraTextProps) {\n  // 保证首尾颜色一致，避免循环时出现断层\n  const safeColors = colors.length >= 2 ? colors : ['#ff006e', '#3a86ff']\n  const head = safeColors[0]\n  const tail = safeColors[safeColors.length - 1]\n  const gradient = `linear-gradient(90deg, ${[...safeColors, head].join(', ')}, ${tail})`\n  const gradientSize = `${Math.max(200, safeColors.length * 100)}% 100%`\n\n  return (\n    <span\n      className={cn(\n        'aurora-text inline-block bg-clip-text text-transparent will-change-background-position',\n        enableOnHover ? 'aurora-text-hover' : 'aurora-text-animate',\n        className\n      )}\n      style={{\n        backgroundImage: gradient,\n        backgroundSize: gradientSize,\n        // 注入自定义速度变量\n        ['--aurora-duration' as string]: `${speed}s`,\n      }}\n    >\n      {text}\n      <style jsx>{`\n        .aurora-text-animate {\n          animation: aurora-flow var(--aurora-duration, 8s) linear infinite;\n        }\n        .aurora-text-hover {\n          animation: none;\n        }\n        .aurora-text-hover:hover {\n          animation: aurora-flow var(--aurora-duration, 8s) linear infinite;\n        }\n        @keyframes aurora-flow {\n          0% {\n            background-position: 0% 50%;\n          }\n          100% {\n            background-position: 200% 50%;\n          }\n        }\n      `}</style>\n    </span>\n  )\n}\n"
+    },
+    {
+      "name": "demo.tsx",
+      "path": "aurora-text/demo.tsx",
+      "content": "'use client'\n\nimport { AuroraText } from './index'\n\nexport function AuroraTextDemo() {\n  return (\n    <div className=\"flex min-h-[400px] w-full flex-col items-center justify-center gap-10 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 p-8\">\n      <div className=\"flex flex-col items-center gap-3\">\n        <span className=\"text-xs uppercase tracking-[0.3em] text-white/40\">\n          Aurora · Default\n        </span>\n        <AuroraText\n          text=\"AURORA TEXT\"\n          className=\"text-6xl font-extrabold tracking-tight md:text-7xl\"\n          speed={8}\n        />\n      </div>\n\n      <div className=\"flex flex-col items-center gap-3\">\n        <span className=\"text-xs uppercase tracking-[0.3em] text-white/40\">\n          Aurora · Slow Gradient\n        </span>\n        <AuroraText\n          text=\"极光流光\"\n          colors={['#22d3ee', '#a855f7', '#ec4899', '#facc15']}\n          className=\"text-5xl font-bold md:text-6xl\"\n          speed={14}\n        />\n      </div>\n\n      <div className=\"flex flex-col items-center gap-3\">\n        <span className=\"text-xs uppercase tracking-[0.3em] text-white/40\">\n          Aurora · Fast Sunset\n        </span>\n        <AuroraText\n          text=\"HOVER ME\"\n          colors={['#f97316', '#ef4444', '#ec4899', '#8b5cf6']}\n          className=\"text-4xl font-black uppercase tracking-widest md:text-5xl\"\n          speed={3}\n          enableOnHover\n        />\n      </div>\n    </div>\n  )\n}\n"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "name": "@sqing/cli",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "sqing-ui": "./bin/sqing-ui.mjs"
+  },
+  "main": "./src/index.ts",
+  "scripts": {
+    "dev": "tsx src/index.ts",
+    "build": "tsup src/index.ts --format esm --target node18 --out-dir dist",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@sqing/registry": "workspace:*",
+    "chalk": "^5.3.0",
+    "commander": "^12.1.0",
+    "execa": "^9.5.1",
+    "inquirer": "^12.1.0",
+    "ora": "^8.1.1",
+    "tsx": "^4.19.2",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^9.0.7",
+    "@types/node": "^22.9.0",
+    "tsup": "^8.3.5",
+    "typescript": "^5.6.3"
+  }
+}

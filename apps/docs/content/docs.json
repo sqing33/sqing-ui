@@ -1,0 +1,58 @@
+{
+  "navigation": [
+    {
+      "group": "入门",
+      "pages": [
+        { "slug": "introduction", "title": "介绍" },
+        { "slug": "installation", "title": "安装" },
+        { "slug": "cli-usage", "title": "CLI 用法" },
+        { "slug": "theming", "title": "主题定制" },
+        { "slug": "contributing", "title": "贡献指南" }
+      ]
+    },
+    {
+      "group": "鼠标与光标",
+      "pages": [
+        { "slug": "components/cursor-follow", "title": "自定义光标" },
+        { "slug": "components/magnetic-button", "title": "磁吸按钮" }
+      ]
+    },
+    {
+      "group": "3D 与视差",
+      "pages": [
+        { "slug": "components/tilt-card", "title": "3D 倾斜卡片" },
+        { "slug": "components/spotlight-card", "title": "聚光灯卡片" }
+      ]
+    },
+    {
+      "group": "视觉特效",
+      "pages": [
+        { "slug": "components/glass-card", "title": "毛玻璃卡片" },
+        { "slug": "components/glitch-text", "title": "故障文字" },
+        { "slug": "components/blob", "title": "液态形变" },
+        { "slug": "components/aurora-text", "title": "极光文字" }
+      ]
+    },
+    {
+      "group": "背景动画",
+      "pages": [
+        { "slug": "components/gradient-mesh", "title": "渐变网格" },
+        { "slug": "components/noise-grain", "title": "噪点颗粒" },
+        { "slug": "components/meteor-shower", "title": "流星雨" }
+      ]
+    },
+    {
+      "group": "数据与滚动",
+      "pages": [
+        { "slug": "components/count-up", "title": "数字滚动" },
+        { "slug": "components/marquee", "title": "无限滚动" }
+      ]
+    },
+    {
+      "group": "交互组件",
+      "pages": [
+        { "slug": "components/animated-tabs", "title": "粘性指示器 Tabs" }
+      ]
+    }
+  ]
+}

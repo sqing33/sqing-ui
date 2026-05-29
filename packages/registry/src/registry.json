@@ -1,0 +1,325 @@
+{
+  "name": "sqing-ui",
+  "version": "0.1.0",
+  "homepage": "https://sqing-ui.dev",
+  "items": [
+    {
+      "name": "animated-tabs",
+      "type": "registry:component",
+      "title": "粘性指示器 tabs,基于 framer-motion layoutId 实现的弹性滑动指示器,选中标签时高亮条像弹簧一样\"粘\"到新位置,顺滑自然",
+      "description": "粘性指示器 tabs,基于 framer-motion layoutId 实现的弹性滑动指示器,选中标签时高亮条像弹簧一样\"粘\"到新位置,顺滑自然。",
+      "category": "feedback",
+      "files": [
+        {
+          "path": "animated-tabs/index.tsx",
+          "target": "{{components}}/sqing-ui/animated-tabs.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "animated-tabs/demo.tsx",
+          "target": "{{components}}/sqing-ui/animated-tabs.demo.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "dependencies": [
+        "framer-motion"
+      ],
+      "devDependencies": [],
+      "registryDependencies": []
+    },
+    {
+      "name": "aurora-text",
+      "type": "registry:component",
+      "title": "极光文字组件，多色线性渐变 + 流光动画，让文字呈现极光般的流光渐变效果",
+      "description": "极光文字组件，多色线性渐变 + 流光动画，让文字呈现极光般的流光渐变效果。支持自定义颜色、动画速度和 hover 触发。",
+      "category": "visual",
+      "files": [
+        {
+          "path": "aurora-text/index.tsx",
+          "target": "{{components}}/sqing-ui/aurora-text.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "aurora-text/demo.tsx",
+          "target": "{{components}}/sqing-ui/aurora-text.demo.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "dependencies": [],
+      "devDependencies": [],
+      "registryDependencies": []
+    },
+    {
+      "name": "blob",
+      "type": "registry:component",
+      "title": "液态斑点（Blob），SVG 路径持续变形的流体效果",
+      "description": "液态斑点（Blob），SVG 路径持续变形的流体效果。",
+      "category": "visual",
+      "files": [
+        {
+          "path": "blob/index.tsx",
+          "target": "{{components}}/sqing-ui/blob.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "blob/demo.tsx",
+          "target": "{{components}}/sqing-ui/blob.demo.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "dependencies": [],
+      "devDependencies": [],
+      "registryDependencies": []
+    },
+    {
+      "name": "count-up",
+      "type": "registry:component",
+      "title": "数字滚动动画，从起始值滚动到目标值，常用于数据展示",
+      "description": "数字滚动动画，从起始值滚动到目标值，常用于数据展示。",
+      "category": "data",
+      "files": [
+        {
+          "path": "count-up/index.tsx",
+          "target": "{{components}}/sqing-ui/count-up.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "count-up/demo.tsx",
+          "target": "{{components}}/sqing-ui/count-up.demo.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "dependencies": [
+        "framer-motion"
+      ],
+      "devDependencies": [],
+      "registryDependencies": []
+    },
+    {
+      "name": "cursor-follow",
+      "type": "registry:component",
+      "title": "鼠标跟随自定义光标，支持多种样式、混合模式、移动端检测",
+      "description": "鼠标跟随自定义光标，支持多种样式、混合模式、移动端检测。",
+      "category": "cursor",
+      "files": [
+        {
+          "path": "cursor-follow/index.tsx",
+          "target": "{{components}}/sqing-ui/cursor-follow.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "cursor-follow/demo.tsx",
+          "target": "{{components}}/sqing-ui/cursor-follow.demo.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "dependencies": [],
+      "devDependencies": [],
+      "registryDependencies": []
+    },
+    {
+      "name": "glass-card",
+      "type": "registry:component",
+      "title": "玻璃态卡片，backdrop-filter 模糊背景 + 渐变边框",
+      "description": "玻璃态卡片，backdrop-filter 模糊背景 + 渐变边框。",
+      "category": "visual",
+      "files": [
+        {
+          "path": "glass-card/index.tsx",
+          "target": "{{components}}/sqing-ui/glass-card.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "glass-card/demo.tsx",
+          "target": "{{components}}/sqing-ui/glass-card.demo.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "dependencies": [],
+      "devDependencies": [],
+      "registryDependencies": []
+    },
+    {
+      "name": "glitch-text",
+      "type": "registry:component",
+      "title": "故障艺术文字，RGB 错位、抖动、闪烁效果",
+      "description": "故障艺术文字，RGB 错位、抖动、闪烁效果。",
+      "category": "visual",
+      "files": [
+        {
+          "path": "glitch-text/index.tsx",
+          "target": "{{components}}/sqing-ui/glitch-text.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "glitch-text/demo.tsx",
+          "target": "{{components}}/sqing-ui/glitch-text.demo.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "dependencies": [],
+      "devDependencies": [],
+      "registryDependencies": []
+    },
+    {
+      "name": "gradient-mesh",
+      "type": "registry:component",
+      "title": "渐变网格背景，多个模糊的渐变球体流动融合",
+      "description": "渐变网格背景，多个模糊的渐变球体流动融合。",
+      "category": "background",
+      "files": [
+        {
+          "path": "gradient-mesh/index.tsx",
+          "target": "{{components}}/sqing-ui/gradient-mesh.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "gradient-mesh/demo.tsx",
+          "target": "{{components}}/sqing-ui/gradient-mesh.demo.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "dependencies": [],
+      "devDependencies": [],
+      "registryDependencies": []
+    },
+    {
+      "name": "magnetic-button",
+      "type": "registry:component",
+      "title": "磁性按钮，鼠标靠近时按钮被吸引，回弹有弹性",
+      "description": "磁性按钮，鼠标靠近时按钮被吸引，回弹有弹性。",
+      "category": "cursor",
+      "files": [
+        {
+          "path": "magnetic-button/index.tsx",
+          "target": "{{components}}/sqing-ui/magnetic-button.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "magnetic-button/demo.tsx",
+          "target": "{{components}}/sqing-ui/magnetic-button.demo.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "dependencies": [
+        "framer-motion"
+      ],
+      "devDependencies": [],
+      "registryDependencies": []
+    },
+    {
+      "name": "marquee",
+      "type": "registry:component",
+      "title": "无限滚动条，内容循环滚动，支持水平和垂直方向",
+      "description": "无限滚动条，内容循环滚动，支持水平和垂直方向。",
+      "category": "scroll",
+      "files": [
+        {
+          "path": "marquee/index.tsx",
+          "target": "{{components}}/sqing-ui/marquee.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "marquee/demo.tsx",
+          "target": "{{components}}/sqing-ui/marquee.demo.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "dependencies": [],
+      "devDependencies": [],
+      "registryDependencies": []
+    },
+    {
+      "name": "meteor-shower",
+      "type": "registry:component",
+      "title": "流星雨背景，多条流星随机从夜空划过，带渐变拖尾与淡入淡出效果，营造流星雨星空氛围",
+      "description": "流星雨背景，多条流星随机从夜空划过，带渐变拖尾与淡入淡出效果，营造流星雨星空氛围。",
+      "category": "background",
+      "files": [
+        {
+          "path": "meteor-shower/index.tsx",
+          "target": "{{components}}/sqing-ui/meteor-shower.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "meteor-shower/demo.tsx",
+          "target": "{{components}}/sqing-ui/meteor-shower.demo.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "dependencies": [],
+      "devDependencies": [],
+      "registryDependencies": []
+    },
+    {
+      "name": "noise-grain",
+      "type": "registry:component",
+      "title": "噪点质感层（film grain），基于 SVG feTurbulence 滤镜生成胶片颗粒纹理，叠加在彩色背景上增加胶片颗粒感",
+      "description": "噪点质感层（film grain），基于 SVG feTurbulence 滤镜生成胶片颗粒纹理，叠加在彩色背景上增加胶片颗粒感。支持自定义密度、透明度、混合模式与动态噪点。",
+      "category": "visual",
+      "files": [
+        {
+          "path": "noise-grain/index.tsx",
+          "target": "{{components}}/sqing-ui/noise-grain.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "noise-grain/demo.tsx",
+          "target": "{{components}}/sqing-ui/noise-grain.demo.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "dependencies": [],
+      "devDependencies": [],
+      "registryDependencies": []
+    },
+    {
+      "name": "spotlight-card",
+      "type": "registry:component",
+      "title": "聚光灯卡片，鼠标在卡片内移动时生成渐变光斑跟随光标，离开时光斑淡出",
+      "description": "聚光灯卡片，鼠标在卡片内移动时生成渐变光斑跟随光标，离开时光斑淡出。",
+      "category": "3d",
+      "files": [
+        {
+          "path": "spotlight-card/index.tsx",
+          "target": "{{components}}/sqing-ui/spotlight-card.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "spotlight-card/demo.tsx",
+          "target": "{{components}}/sqing-ui/spotlight-card.demo.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "dependencies": [
+        "framer-motion"
+      ],
+      "devDependencies": [],
+      "registryDependencies": []
+    },
+    {
+      "name": "tilt-card",
+      "type": "registry:component",
+      "title": "3D 倾斜卡片，鼠标悬停时呈现透视倾斜效果，可选光斑反射",
+      "description": "3D 倾斜卡片，鼠标悬停时呈现透视倾斜效果，可选光斑反射。",
+      "category": "3d",
+      "files": [
+        {
+          "path": "tilt-card/index.tsx",
+          "target": "{{components}}/sqing-ui/tilt-card.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "tilt-card/demo.tsx",
+          "target": "{{components}}/sqing-ui/tilt-card.demo.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "dependencies": [
+        "framer-motion"
+      ],
+      "devDependencies": [],
+      "registryDependencies": []
+    }
+  ]
+}
